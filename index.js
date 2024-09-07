@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import postRoutes from './routes/post.route.js';
-import commentRoutes from './routes/comment.route.js';
+import quizRoutes from './routes/quiz.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 
@@ -45,13 +45,15 @@ app.listen(PORT, () => {
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/post', postRoutes);
-app.use('/api/comment', commentRoutes);
+// quiz routes
+app.use('/api/posts', postRoutes);
+app.use('/api/quizzes', quizRoutes);
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
+// app.use(express.static(path.join(__dirname, '/client/dist')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+// });
 
 
 

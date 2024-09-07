@@ -8,7 +8,6 @@ import {
   changePWDSuccess,
   loadingFailure,
 } from "../redux/user/userSlice";
-import OAuth from "../components/OAuth";
 
 export default function ForgetPassword() {
   const [formData, setFormData] = useState({});
