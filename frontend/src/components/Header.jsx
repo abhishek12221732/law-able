@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { brainmaster } from "../assets";
+import { lawlogo } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
 import { HamburgerMenu } from "./design/Header";
@@ -34,12 +34,12 @@ const Header = () => {
       ${openNavigation ? "bg-n-14" : "bg-n-14/90 backdrop-blur-sm"}`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
+        <a className="block w-[12rem] xl:mr-8 border-none" href="#hero">
           <img
-            src={brainmaster}
+            src={lawlogo}
             width={196}
             height={40}
-            alt="Brainmaster logo"
+            alt="Law-Aware logo" className="border-none outline-none"
           />
         </a>
         <nav
