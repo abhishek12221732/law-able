@@ -25,7 +25,7 @@ const Hero = () => {
           <h1 className="h1 mb-6">
           Shine Your Light, Stand Up for What's Right, with {" "}
             <span className="inline-block relative">
-               Law<span className="text-purple-500">Aware</span>{" "}
+               Law<span className="text-[#5271FF]">Aware</span>{" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -36,8 +36,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within Brainmaster. Upgrade your
-            productivity with Brainmaster, the open AI chat app.
+          Discover your rights, let the learning begin because in a world of justice, we all win!
           </p>
           <Button href="/pricing" white>
             Get Started
