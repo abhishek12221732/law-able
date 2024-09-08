@@ -21,6 +21,7 @@
     "react-router-dom": "^6.26.1",
     "redux-persist": "^6.0.0",
     "scroll-lock": "^2.1.5",
+    "swiper-react": "^1.0.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
