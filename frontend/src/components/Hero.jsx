@@ -35,7 +35,7 @@ const Hero = () => {
               />
             </span>
           </h1>
-          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
+          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8 text-white">
           Discover your rights, let the learning begin because in a world of justice, we all win!
           </p>
           <Button href="/pricing" white>

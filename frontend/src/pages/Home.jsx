@@ -10,10 +10,10 @@ const Home = () => {
     <>
     <Hero />
     <Benefits />
-    <Collaboration />
+{/*     <Collaboration />
     <Services />
     <Pricing />
-    <Roadmap />
+    <Roadmap /> */}
     </>
   )
 }
