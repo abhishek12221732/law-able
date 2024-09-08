@@ -4,7 +4,7 @@ import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
-
+ 
 const Benefits = () => {
   return (
     <Section id="features">

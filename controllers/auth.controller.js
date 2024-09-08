@@ -257,11 +257,14 @@ export const google = async (req, res, next) => {
       );
       const { password, ...rest } = newUser._doc;
       res
-        .status(200)
-        .cookie("access_token", token, {
-          httpOnly: true,
-        })
-        .json(rest);
+  .status(200)
+  .cookie('access_token', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production', // Set to true in production
+    sameSite: 'lax', // Adjust according to your needs (lax, strict, or none)
+  })
+  .json(rest);
+
     }
   } catch (error) {
     next(error);

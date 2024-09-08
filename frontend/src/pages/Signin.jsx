@@ -7,6 +7,7 @@ import {
   signInSuccess,
   signInFailure,
 } from '../redux/user/userSlice';
+import { motion } from 'framer-motion';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -23,7 +24,7 @@ export default function SignIn() {
     }
     try {
       dispatch(signInStart());
-      const res = await fetch('/api/auth/signin', {
+      const res = await fetch('http://localhost:3000/api/auth/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -48,26 +49,32 @@ export default function SignIn() {
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              Tech
+              Law
             </span>
-            Blog
+            Aware
           </Link>
           <p className='text-sm mt-5'>
             You can sign in with your email and password
-            or with Google.
           </p>
         </div>
         {/* right */}
 
         <div className='flex-1'>
-          <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
+        <motion.form
+            className='flex flex-col gap-4'
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 75, delay: 0.2 }}
+          >
             <div>
               <Label value='Your email' />
               <TextInput
                 type='email'
-                placeholder='name@company.com'
+                placeholder='name@example.com'
                 id='email'
                 onChange={handleChange}
+                className='border bg-none border-gray-300 rounded-lg p-2 ring-none focus:border-transparent transition duration-200 placeholder-transparent'
               />
             </div>
             <div>
@@ -77,6 +84,7 @@ export default function SignIn() {
                 placeholder='**********'
                 id='password'
                 onChange={handleChange}
+                className='border bg-none border-gray-300 rounded-lg p-2 ring-none focus:border-transparent transition duration-200 placeholder-transparent'
               />
             </div>
             <div className='flex gap-2 text-sm mt-2'>
@@ -100,7 +108,7 @@ export default function SignIn() {
               )}
             </Button>
 
-          </form>
+          </motion.form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>Dont Have an account?</span>
             <Link to='/sign-up' className='text-blue-500'>

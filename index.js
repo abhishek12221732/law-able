@@ -7,6 +7,7 @@ import postRoutes from './routes/post.route.js';
 import quizRoutes from './routes/quiz.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import cors from 'cors';
 
 dotenv.config();
 console.log(process.env.MONGO_URI);
@@ -19,6 +20,7 @@ await mongoose
     console.log(err);
   });
 
+ 
   
 // const connect = async () => {
 //   try {
@@ -33,8 +35,13 @@ const __dirname = path.resolve();
 
 const app = express();
 
-app.use(express.json());
-app.use(cookieParser());
+ // Apply CORS policy
+ app.use(cors());
+
+
+
+app.use(cookieParser()); // To parse cookies
+app.use(express.json()); // To parse JSON bodies
 
 const PORT = process.env.PORT || 3000;
 
@@ -49,11 +56,6 @@ app.use('/api/post', postRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/quizzes', quizRoutes);
 
-// app.use(express.static(path.join(__dirname, '/client/dist')));
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-// });
 
 
 

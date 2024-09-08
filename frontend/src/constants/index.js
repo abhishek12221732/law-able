@@ -145,21 +145,21 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "Our platform will help you to learn fundamental rights of our Indian constitution.";
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
+    title: "Fundamental Rights",
     text: collabText,
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "Gamified platform",
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "Learn with fun!",
   },
 ];
 

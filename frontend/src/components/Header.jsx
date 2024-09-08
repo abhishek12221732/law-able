@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { lawlogo } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
 import { HamburgerMenu } from "./design/Header";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
+  const { currentUser } = useSelector((state) => state.user);
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -68,15 +70,22 @@ const Header = () => {
 
           <HamburgerMenu />
         </nav>
-        <a
-          href="#sign-up"
+        {
+          currentUser &&  <Button className="hidden lg:flex" href="/quiz">
+          Play Quiz Game
+        </Button>
+        }
+        {!currentUser && <><Link
+          to="/sign-up"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New account
-        </a>
-        <Button className="hidden lg:flex" href="#sign-in">
-          Sign in
-        </Button>
+        </Link>
+        <Button className="hidden lg:flex">
+          <Link to="/sign-in">
+          Sign in</Link>
+        </Button></>}
+        
         <Button
           className="ml-auto lg:hidden"
           px="px-3"

@@ -7,6 +7,8 @@ import SignIn from './pages/Signin';
 import SignUp from './pages/Signup';
 import About from './pages/About';
 import ForgetPassword from './pages/ForgotPassword';
+import QuizPage from './pages/Quiz';
+import BulkUploadForm from './pages/Bulk';
 
 
 
@@ -21,6 +23,8 @@ const App = () => {
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/forget-password' element={<ForgetPassword />} />
+          <Route path='/upload' element={<BulkUploadForm />} />
+          <Route path='/quiz' element={<QuizPage />} />
         </Routes>
         <Footer />
       </div>
